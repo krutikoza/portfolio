@@ -2,5 +2,112 @@
     width: 100vw;
     height: 100vh;
     max-width: 100%;
+}
 
+.homeSkillsCanvas{
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+
+}
+
+
+
+.homeContainer{
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    padding: 4vmax;
+    border-radius: 0 0 100px 100px;
+    border-bottom: 100px solid rgb(255, 255, 255);
+    z-index: 1;
+}
+
+.homeSkills{
+    background-color: rgb(29, 30, 68);
+    transform: translatey(-100px);
+    height: 100hv; 
+    position: relative;
+    
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: hidden;
+    z-index: -1;
+}
+
+.skillBox {
+    transform: translatey(-400px);
+}
+.homeSkills > h3{
+    text-align: center;
+    font-size: 4vmax;
+
+    color: white;
+}
+
+.homeCubeSkills{
+    
+    
+    width:200px;
+    height:200px;
+    animation: cubeRotation 15s linear infinite;
+    transform-style: preserve-3d;
+}
+.homeCubeSkillsFaces{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    opacity: 0.9;
+}
+
+.homeCubeSkillsFaces > img {
+    height: inherit;
+    width: inherit;
+    
+}
+
+.homeCubeSkillsFaces1 {
+    transform: translate3d(0,0, 100px);
+}
+
+.homeCubeSkillsFaces2 {
+    transform: rotateY(180deg) translate3d(0,0, 100px);
+}
+.homeCubeSkillsFaces3 {
+    transform: rotateY(-90deg) translate3d(0,0, 100px);
+}
+.homeCubeSkillsFaces4 {
+    transform: rotateY(90deg) translate3d(0,0, 100px);
+}
+.homeCubeSkillsFaces5 {
+    transform: rotateX(90deg) translate3d(0,0, 100px);
+}
+
+.homeCubeSkillsFaces6 {
+    transform: rotateX(-90deg) translate3d(0,0, 100px);
+}
+
+.cubeShadow {
+    width: 250px;
+    height: 40px;
+    background-color: rgba(12, 4, 4, 0.44);
+    border-radius: 50%;
+    animation: cubeShadow 1s ease-in-out infinite alternate;
+}
+
+@keyframes cubeRotation{
+    to{
+        transform: rotateX(720deg) rotateY(720deg) rotateZ(100deg)
+    }
+}
+
+@keyframes cubeShadow{
+    to{
+        transform: scale(1.1) translatey(-5px)
+    }
 }

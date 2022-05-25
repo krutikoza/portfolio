@@ -22,6 +22,7 @@ const Home = () => {
     const sunTexture = textureLoader.load(sunImage)
     const mercuryTexture = textureLoader.load(mercuryImage)
     const backgroundTexture = textureLoader.load(spaceBackground)
+
     // create a scene and camera
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(55, window.innerWidth/ window.innerHeight, 0.1, 1000)
@@ -36,6 +37,8 @@ const Home = () => {
 
     const mercuryGeometry = new THREE.SphereGeometry(3,64,64)
     const mercuryMaterial = new THREE.MeshStandardMaterial({map : mercuryTexture})
+
+
 
     // creating a light, as we are useng meshstandardMaterial(It reacts on lighting)
     const pointlight = new THREE.PointLight(0xFAF4C3,1)
@@ -68,6 +71,7 @@ const Home = () => {
     scene.add(pointlight)
     scene.add(pointlight2)
     scene.background = backgroundTexture
+
     
     //scene.add(lightHelper)
     camera.position.z = 20
@@ -75,12 +79,11 @@ const Home = () => {
     // animate it to rotate (render)
     const animate = () => {
       requestAnimationFrame(animate);
-      //planet1.rotation.x += 0.05;
       sun.rotation.y += 0.0008;
       mercury.rotation.y += 0.005;
       
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.render(scene,camera);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.render(scene,camera);
 
     }
 
@@ -88,15 +91,134 @@ const Home = () => {
   }, [])
 
 
+  useEffect(() => {
+
+    // Create a texture loader for our background planets.
+    // const textureLoader = new THREE.TextureLoader();
+
+    const textureLoader = new THREE.TextureLoader();
+
+    const sunTexture = textureLoader.load(sunImage)
+
+    // create a scene and camera
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(90, window.innerWidth/ window.innerHeight, 0.1, 1000)
+
+    // create a canvas and render
+    const canvas = document.querySelector(".homeSkillsCanvas");
+    const renderer = new THREE.WebGLRenderer({canvas});
+
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    
+    // create geometry(structure) and material(material to be used to render that structuer)
+    const geometry = new THREE.BoxGeometry( 10, 10, 10 );
+    const material = new THREE.MeshBasicMaterial( {color: sunTexture, transparent: true, opacity: 0.9} );
+
+    const geometryBase = new THREE.BoxGeometry( 1000, 1, 1000 );
+    const materialBase = new THREE.MeshStandardMaterial( {color: 0X0D6393} );
+
+    
+    const pointlight = new THREE.PointLight(0xFFFFFF,1)
+    pointlight.castShadow = true;
+    
+    pointlight.position.y += 30
+    pointlight.position.z += 5
+
+
+    // create an object to render
+    const cube = new THREE.Mesh( geometry, material );
+    const base = new THREE.Mesh( geometryBase, materialBase );
+    
+    // shadow
+    cube.castShadow = true;
+    
+
+    
+    base.receiveShadow = true;
+    
+    //create controller
+    const controls = new OrbitControls(camera, renderer.domElement)
+
+    // light helper
+    const lightHelper = new THREE.PointLightHelper(pointlight)
+
+    // add that object into our scene
+    scene.add(cube)
+    scene.add(base)
+    scene.add(pointlight)
+    scene.add(lightHelper)
+
+    
+    camera.position.z = 35
+    base.position.y = -10
+    cube.rotation.x += 5;
+    
+    function animate() {
+      requestAnimationFrame( animate );
+      
+      cube.rotation.y += 0.008;
+      cube.rotation.x += 0.008;
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.render(scene,camera);
+    }
+    animate();
+    
+
+  }, [])
+
+
   return (
     <div className="home">
       <canvas className="homeCanvas"></canvas>
+      
 
       <div className="homeContainer">
-        <Typography variant="h3"> Timeline</Typography>
+        <Typography variant="h3"> TIMELINE</Typography>
 
         <TimeLine timelines = {[1,2,3,4]} />
       </div>
+
+      
+
+      <div className = "homeSkills">
+        <Typography variant="h3">SKILLS</Typography>
+
+        <canvas shadowMap className="homeSkillsCanvas"></canvas>
+        
+        {/* <div className="homeCubeSkills">
+
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces1">
+            <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt = "Face1"></img>
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces2">
+            <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt = "Face2"></img>
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces3">
+            <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt = "Face3"></img>
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces4">
+            <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt = "Face4"></img>
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces5">
+            <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt = "Face5"></img>
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFaces6">
+            <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt = "Face6"></img>
+          </div>
+          
+        </div>
+        <div className="cubeShadow"></div>*/}
+
+
+
+
+
+      </div> 
+      <div className="skillBox">
+      
+      </div>
+
     </div>
   )
 }
