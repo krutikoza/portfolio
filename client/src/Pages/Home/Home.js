@@ -10,6 +10,7 @@ import sunImage from "../../Images/sun.jpg"
 import mercuryImage from "../../Images/mercury.jpg"
 import spaceBackground from "../../Images/spaceBackground.jpg"
 import TimeLine from "../TimeLine/TimeLine"
+import { SiReact, SiPython, SiMongodb, SiNodedotjs, SiHtml5, SiCss3, SiExpress } from "react-icons/si";
 
 const Home = () => {
 
@@ -138,16 +139,16 @@ const Home = () => {
     base.receiveShadow = true;
     
     //create controller
-    const controls = new OrbitControls(camera, renderer.domElement)
+    //const controls = new OrbitControls(camera, renderer.domElement)
 
     // light helper
-    const lightHelper = new THREE.PointLightHelper(pointlight)
+    //const lightHelper = new THREE.PointLightHelper(pointlight)
 
     // add that object into our scene
     scene.add(cube)
     scene.add(base)
     scene.add(pointlight)
-    scene.add(lightHelper)
+    //scene.add(lightHelper)
 
     
     camera.position.z = 35
@@ -185,40 +186,23 @@ const Home = () => {
         <Typography variant="h3">SKILLS</Typography>
 
         <canvas shadowMap className="homeSkillsCanvas"></canvas>
+       
         
-        {/* <div className="homeCubeSkills">
-
-          <div className="homeCubeSkillsFaces homeCubeSkillsFaces1">
-            <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt = "Face1"></img>
-          </div>
-          <div className="homeCubeSkillsFaces homeCubeSkillsFaces2">
-            <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt = "Face2"></img>
-          </div>
-          <div className="homeCubeSkillsFaces homeCubeSkillsFaces3">
-            <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt = "Face3"></img>
-          </div>
-          <div className="homeCubeSkillsFaces homeCubeSkillsFaces4">
-            <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt = "Face4"></img>
-          </div>
-          <div className="homeCubeSkillsFaces homeCubeSkillsFaces5">
-            <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt = "Face5"></img>
-          </div>
-          <div className="homeCubeSkillsFaces homeCubeSkillsFaces6">
-            <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt = "Face6"></img>
-          </div>
-          
-        </div>
-        <div className="cubeShadow"></div>*/}
-
-
-
-
 
       </div> 
-      <div className="skillBox">
+      <div>
+      <div className="homeSkillsBox">
+          <SiReact />
+          <SiPython />
+          <SiMongodb />
+          <SiNodedotjs />
+          <SiHtml5 />
+          <SiCss3 />
+          <SiExpress />
+        </div>
+        
+        </div>
       
-      </div>
-
     </div>
   )
 }

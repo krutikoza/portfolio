@@ -6,8 +6,9 @@
 
 .homeSkillsCanvas{
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     max-width: 100%;
+    max-height: 90%;
 
 }
 
@@ -34,12 +35,11 @@
     justify-content: space-around;
     align-items: center;
     overflow-x: hidden;
+
     z-index: -1;
 }
 
-.skillBox {
-    transform: translatey(-400px);
-}
+
 .homeSkills > h3{
     text-align: center;
     font-size: 4vmax;
@@ -65,39 +65,27 @@
     opacity: 0.9;
 }
 
-.homeCubeSkillsFaces > img {
-    height: inherit;
-    width: inherit;
+
+
+
+.homeSkillsBox {
+    justify-content: center;
+    background-color: rgb(29, 30, 68);
+    display: flex;
+    flex-direction: row;
+    transform: translatey(-100px);
+    animation: homeSkillsBoxOn 1s linear;
     
 }
-
-.homeCubeSkillsFaces1 {
-    transform: translate3d(0,0, 100px);
+.homeSkillsBox > svg {
+    font-size: 3vmax;
+    color: rgb(255, 255, 255);
+    transition: all 0.5s;
+    margin: 1vmax;
 }
 
-.homeCubeSkillsFaces2 {
-    transform: rotateY(180deg) translate3d(0,0, 100px);
-}
-.homeCubeSkillsFaces3 {
-    transform: rotateY(-90deg) translate3d(0,0, 100px);
-}
-.homeCubeSkillsFaces4 {
-    transform: rotateY(90deg) translate3d(0,0, 100px);
-}
-.homeCubeSkillsFaces5 {
-    transform: rotateX(90deg) translate3d(0,0, 100px);
-}
-
-.homeCubeSkillsFaces6 {
-    transform: rotateX(-90deg) translate3d(0,0, 100px);
-}
-
-.cubeShadow {
-    width: 250px;
-    height: 40px;
-    background-color: rgba(12, 4, 4, 0.44);
-    border-radius: 50%;
-    animation: cubeShadow 1s ease-in-out infinite alternate;
+.homeSkillsBox > svg:hover{
+    transform: scale(1.5);
 }
 
 @keyframes cubeRotation{
@@ -106,8 +94,14 @@
     }
 }
 
-@keyframes cubeShadow{
+
+@keyframes homeSkillsBoxOn {
+    from{
+        transform: translateX(-500px);
+        transform: translateY(-200px);
+    }
     to{
-        transform: scale(1.1) translatey(-5px)
+        transform: translateX(0px);
+        transform: translateY(0px);
     }
 }
