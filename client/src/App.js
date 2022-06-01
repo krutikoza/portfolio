@@ -10,7 +10,7 @@ import Signup from './Pages/Signup'
 import Projects from './Pages/Projects'
 
 import Header from './Pages/Header/Header.js'
-
+import Footer from './Pages/Footer/Footer.jsx'
 
 
 
@@ -46,7 +46,8 @@ function App() {
         </Routes>
       </Router>
   
-  
+    <Footer />
+
     </div>
 
   );

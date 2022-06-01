@@ -94,12 +94,31 @@ const Home = () => {
 
   useEffect(() => {
 
-    // Create a texture loader for our background planets.
+    // Create a texture loader for our cube.
     // const textureLoader = new THREE.TextureLoader();
 
     const textureLoader = new THREE.TextureLoader();
 
-    const sunTexture = textureLoader.load(sunImage)
+    const cubeTexture = [
+      new THREE.MeshBasicMaterial({
+        map: textureLoader.load("https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg")
+      }),
+      new THREE.MeshBasicMaterial({
+        map: textureLoader.load("https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg")
+      }),
+      new THREE.MeshBasicMaterial({
+        map: textureLoader.load("https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg")
+      }),
+      new THREE.MeshBasicMaterial({
+        map: textureLoader.load("https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg")
+      }),
+      new THREE.MeshBasicMaterial({
+        map: textureLoader.load("https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg")
+      }),
+      new THREE.MeshBasicMaterial({
+        map: textureLoader.load("https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg")
+      }),
+    ]
 
     // create a scene and camera
     const scene = new THREE.Scene();
@@ -114,7 +133,7 @@ const Home = () => {
     
     // create geometry(structure) and material(material to be used to render that structuer)
     const geometry = new THREE.BoxGeometry( 10, 10, 10 );
-    const material = new THREE.MeshBasicMaterial( {color: sunTexture, transparent: true, opacity: 0.9} );
+    const material = new THREE.MeshFaceMaterial( cubeTexture, { transparent: true, opacity: 0.9} );
 
     const geometryBase = new THREE.BoxGeometry( 1000, 1, 1000 );
     const materialBase = new THREE.MeshStandardMaterial( {color: 0X0D6393} );
@@ -158,7 +177,7 @@ const Home = () => {
     function animate() {
       requestAnimationFrame( animate );
       
-      cube.rotation.y += 0.008;
+      cube.rotation.y += 0.010;
       cube.rotation.x += 0.008;
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.render(scene,camera);
@@ -183,14 +202,18 @@ const Home = () => {
       
 
       <div className = "homeSkills">
-        <Typography variant="h3">SKILLS</Typography>
+        {/* <Typography variant="h3">SKILLS</Typography> */}
 
         <canvas shadowMap className="homeSkillsCanvas"></canvas>
        
+
+        
+        
         
 
       </div> 
-      <div>
+      <div className = "skillList">
+
       <div className="homeSkillsBox">
           <SiReact />
           <SiPython />
@@ -200,8 +223,8 @@ const Home = () => {
           <SiCss3 />
           <SiExpress />
         </div>
-        
-        </div>
+      
+      </div>
       
     </div>
   )

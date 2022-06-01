@@ -21,11 +21,12 @@
     border-radius: 0 0 100px 100px;
     border-bottom: 100px solid rgb(255, 255, 255);
     z-index: 1;
+    
 }
 
 .homeSkills{
     background-color: rgb(29, 30, 68);
-    transform: translatey(-100px);
+    
     height: 100hv; 
     position: relative;
     
@@ -35,7 +36,7 @@
     justify-content: space-around;
     align-items: center;
     overflow-x: hidden;
-
+    margin-top: -7vw;
     z-index: -1;
 }
 
@@ -43,7 +44,6 @@
 .homeSkills > h3{
     text-align: center;
     font-size: 4vmax;
-
     color: white;
 }
 
@@ -52,7 +52,7 @@
     
     width:200px;
     height:200px;
-    animation: cubeRotation 15s linear infinite;
+    animation: cubeRotation 15s linear forwards;
     transform-style: preserve-3d;
 }
 .homeCubeSkillsFaces{
@@ -69,15 +69,18 @@
 
 
 .homeSkillsBox {
+    margin-top: -9.8vh;
     justify-content: center;
     background-color: rgb(29, 30, 68);
     display: flex;
     flex-direction: row;
-    transform: translatey(-100px);
-    animation: homeSkillsBoxOn 1s linear;
+    /* transform: translatey(-100px); */
+    animation: homeSkillsBoxOn 0.2s linear forwards;
+    
     
 }
 .homeSkillsBox > svg {
+    
     font-size: 3vmax;
     color: rgb(255, 255, 255);
     transition: all 0.5s;
@@ -90,18 +93,29 @@
 
 @keyframes cubeRotation{
     to{
-        transform: rotateX(720deg) rotateY(720deg) rotateZ(100deg)
+        transform: rotateX(1080deg) rotateY(720deg) rotateZ(100deg)
     }
 }
 
 
 @keyframes homeSkillsBoxOn {
     from{
-        transform: translateX(-500px);
-        transform: translateY(-200px);
+        transform: translatey(10vh);
+        
     }
     to{
-        transform: translateX(0px);
-        transform: translateY(0px);
+        transform: translatey(0vh);
+        
+    }
+}
+
+@keyframes homeSkillsBoxOff {
+    from{
+        transform: translateX(0vw);
+        
+    }
+    to{
+        transform: translateX(-100vw);
+        
     }
 }
