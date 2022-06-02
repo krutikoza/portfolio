@@ -10,7 +10,15 @@ import sunImage from "../../Images/sun.jpg"
 import mercuryImage from "../../Images/mercury.jpg"
 import spaceBackground from "../../Images/spaceBackground.jpg"
 import TimeLine from "../TimeLine/TimeLine"
-import { SiReact, SiPython, SiMongodb, SiNodedotjs, SiHtml5, SiCss3, SiExpress } from "react-icons/si";
+
+import ReactImage from "../../Images/react.png"
+import pythonImage from "../../Images/python.png"
+import mdbImage from "../../Images/mdb.png"
+import jsImage from "../../Images/JavaScript.png"
+import html5 from "../../Images/html5.png"
+import threejs from "../../Images/threejs.png"
+
+import { SiReact, SiPython, SiMongodb, SiNodedotjs, SiHtml5, SiCss3, SiExpress, SiNumpy } from "react-icons/si";
 
 const Home = () => {
 
@@ -80,6 +88,8 @@ const Home = () => {
     // animate it to rotate (render)
     const animate = () => {
       requestAnimationFrame(animate);
+      
+      
       sun.rotation.y += 0.0008;
       mercury.rotation.y += 0.005;
       
@@ -101,22 +111,22 @@ const Home = () => {
 
     const cubeTexture = [
       new THREE.MeshBasicMaterial({
-        map: textureLoader.load("https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg")
+        map: textureLoader.load(ReactImage)
       }),
       new THREE.MeshBasicMaterial({
-        map: textureLoader.load("https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg")
+        map: textureLoader.load(pythonImage)
       }),
       new THREE.MeshBasicMaterial({
-        map: textureLoader.load("https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg")
+        map: textureLoader.load(mdbImage)
       }),
       new THREE.MeshBasicMaterial({
-        map: textureLoader.load("https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg")
+        map: textureLoader.load(jsImage)
       }),
       new THREE.MeshBasicMaterial({
-        map: textureLoader.load("https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg")
+        map: textureLoader.load(html5)
       }),
       new THREE.MeshBasicMaterial({
-        map: textureLoader.load("https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg")
+        map: textureLoader.load(threejs)
       }),
     ]
 
@@ -216,12 +226,13 @@ const Home = () => {
 
       <div className="homeSkillsBox">
           <SiReact />
-          <SiPython />
           <SiMongodb />
           <SiNodedotjs />
           <SiHtml5 />
           <SiCss3 />
           <SiExpress />
+          <SiPython />
+          <SiNumpy />
         </div>
       
       </div>

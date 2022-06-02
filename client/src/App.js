@@ -4,7 +4,7 @@ import {BrowserRouter as Router , Route, Routes} from "react-router-dom";
 import './App.css';
 
 import Home from './Pages/Home/Home'
-import About from './Pages/About'
+import About from './Pages/About/About'
 import Login from './Pages/Login'
 import Signup from './Pages/Signup'
 import Projects from './Pages/Projects'

@@ -1,0 +1,42 @@
+.about{
+    background-color: rgb(5, 3, 55);
+    min-height: 100vh;
+    
+    z-index: -1;
+}
+
+.abour> div{
+    z-index: 1;
+}
+
+.dataContainer{
+    min-height: 100vh;
+    display: flex;
+    margin-top: -101vh;
+}
+
+
+.aboutContainer1{
+    width: 40%;
+    
+    color: rgb(252, 252, 252);
+    
+}
+
+
+.aboutContainer2{
+    text-align: center;
+    height: 75vh;
+    width: 60%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    right: 0;
+    margin-top: 0vh;
+    z-index: 10;
+    
+}
+
+.canvas {
+    
+    z-index: +10;
+}

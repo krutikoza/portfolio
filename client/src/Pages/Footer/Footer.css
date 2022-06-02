@@ -3,8 +3,14 @@
     display: grid;
     padding: 3vmax;
     grid-template-columns: 1fr 1fr;
+    z-index: 1;
 }
 
 .footerBackground > div > a{
-    font-size: 3vmax
+    font-size: 3vmax;
+}
+
+.footerIcon:hover{
+    transform: scale(1.1);
+    color: rgba(0,0,0);
 }

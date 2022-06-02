@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Footer.css"
 import Typography from '@mui/material/Typography';
-import { AiOutlineMail, AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
+import { AiOutlineMail, AiFillGithub, AiOutlineInstagram, AiOutlineLinkedin } from "react-icons/ai";
 import Link from '@mui/material/Link';
 
 const Footer = () => {
@@ -17,13 +17,24 @@ const Footer = () => {
         <div>
             <Typography variant="h6" color="white">Social Media/Contact</Typography>
             <a href="https://github.com/krutikoza">
-                <AiFillGithub />
+                <AiFillGithub color="white"
+                onMouseOver={({target})=>target.style.color="6006DB"}
+                onMouseOut={({target})=>target.style.color="f5f5f5"}/>
+            </a>
+            <a href="mailto:ozakrutik@gmail.com" >
+                <AiOutlineMail color="white"
+                onMouseOver={({target})=>target.style.color="6006DB"}
+                onMouseOut={({target})=>target.style.color="f5f5f5"}/>
             </a>
             <a href="https://github.com/krutikoza">
-                <AiOutlineMail />
+                <AiOutlineInstagram color="white"
+                onMouseOver={({target})=>target.style.color="6006DB"}
+                onMouseOut={({target})=>target.style.color="f5f5f5"}/>
             </a>
             <a href="https://github.com/krutikoza">
-                <AiOutlineInstagram />
+                <AiOutlineLinkedin color="white"
+                onMouseOver={({target})=>target.style.color="6006DB"}
+                onMouseOut={({target})=>target.style.color="f5f5f5"}/>
             </a>
         </div>
     </div>
