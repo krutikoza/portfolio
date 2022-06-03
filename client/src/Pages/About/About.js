@@ -1,4 +1,6 @@
 import React, {useEffect} from 'react'
+import {Typography} from "@mui/material"
+
 
 import * as THREE from "three"
 
@@ -91,22 +93,22 @@ const About = () => {
     return (
         <div className="about">
 
-            
             <div className="canvas">
                 <canvas className="homeCanvas"></canvas>
             </div>
 
             <div className= "dataContainer">
+                
                 <div className="aboutContainer1">
-                    container1
+                    <Typography variant ="h4">Krutik Oza</Typography>
+                    <Typography>I am a software developer</Typography>
+                    <Typography>And pursuing my personal interest in developing reusable code deploying programs.</Typography>
                 </div>
                 <div className="aboutContainer2">
                     container2
                 </div>
             </div>
 
-            
-            
         </div>
     )
 }

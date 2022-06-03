@@ -2,25 +2,28 @@
     background-color: rgb(5, 3, 55);
     min-height: 100vh;
     
-    z-index: -1;
-}
-
-.abour> div{
-    z-index: 1;
 }
 
 .dataContainer{
     min-height: 100vh;
     display: flex;
-    margin-top: -101vh;
+    margin-top: -100vh;
+
 }
 
 
 .aboutContainer1{
-    width: 40%;
-    
-    color: rgb(252, 252, 252);
-    
+    text-align: center;
+    height: 75vh;
+    width: 70%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    left: 0;
+    margin-top: 26vh;
+    z-index: 1;
+    box-shadow: 0 0 16px rgb(0, 0, 0, 0.8);
+    transform: translateX(-100vw) rotateZ(-180deg);
+    animation: aboutAnimation 1s ease-in forwards;
 }
 
 
@@ -31,12 +34,20 @@
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     right: 0;
-    margin-top: 0vh;
-    z-index: 10;
-    
+    margin-top: 0vh; 
+    position: absolute;
 }
 
+
 .canvas {
-    
     z-index: +10;
+    height: 100vh;
+}
+
+
+
+@keyframes aboutAnimation {
+    to{
+        transform: translateX(20%) translatey(-15%)
+    }
 }
