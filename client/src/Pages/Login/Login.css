@@ -1,0 +1,70 @@
+.login{
+    background-color: rgba(16, 28, 97, 0.9);
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    align-items: center;
+} 
+
+.loginContainer{
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: rgba(224, 9, 9, 0.9);
+    background-color: rgba(255, 255, 255, 1);
+    
+}
+
+
+.loginForm{
+    height: 70vh;
+    padding: 2vmax;
+    
+
+}
+
+.loginForm > h4 {
+    display: flex;
+    margin: 2vmax;
+    letter-spacing: 15px;
+    justify-content: center;
+}
+
+
+.loginForm > h4 > p {
+    transition: all 0.5s;
+    cursor: default;
+}
+
+.loginForm > h4 > p:hover{
+    transform: translateY(-10px)
+}
+
+
+.loginForm > div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.loginForm > div > input {
+    padding: 1vmax 2vmax;
+    margin: 1vmax;
+    border: 2px solid rgba(0,0,0,0,2);
+    border-radius: 30px;
+    
+    
+}
+
+.loginForm > div > button {
+    padding: 1vmax 2vmax;
+    margin: 1vmax;
+    border: 1px solid rgba(0,0,0,0,2);
+    border-radius: 30px;
+    background-color: rgb(8, 33, 143)
+}
+
+.loginForm > div > button:hover{
+    background-color: rgb(9, 171, 87)
+}

@@ -67,9 +67,14 @@ const Projects = () => {
         //     </div>
 
         // </div>
-
-        
+        <div className="ProjectMain">
+        <div className="ProjectHead">
+            <Typography variant="h3">
+                    Projects <AiOutlineProject />
+            </Typography>
+        </div>
         <div className="main">
+            
             <div className = "wrapper">
                 {projects.map((project,index) => (
                        <Card
@@ -83,6 +88,7 @@ const Projects = () => {
                 
             </div>
             
+        </div>
         </div>
     )
 }
@@ -101,7 +107,7 @@ function Card(values)
                 <p className="card_technologies">Technologies: </p>
                 <p>{values.technologies}</p>
             </div>
-            <button className="card_button">View code on GitHub</button>
+            <Button type="submit" className="card_button"><Typography fontWeight= 'bold'>View code on GitHub</Typography></Button>
             {values.isAdmin && (
                 <Button>
                     <Delete />

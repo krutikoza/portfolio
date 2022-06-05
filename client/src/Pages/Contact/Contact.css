@@ -1,0 +1,58 @@
+.contact {
+    background-color: rgb(6, 16, 53);
+    width: 100vw;
+    height: 100vh;
+}
+
+.rightBar{
+    height: inherit;
+    width: 30%;
+    position: absolute;
+    color: rgb(0, 172, 246);
+    right:0;
+    z-index: 1;
+
+}
+
+.contactContainer{
+    width: 70%;
+    height: 80%;
+    background-color:rgb(255, 255, 255);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    transform: translateX(20%) translateY(-50%);
+    top: 50%;
+    border-radius: 0 100px 0 100px;
+    box-shadow: rgba(193, 28, 28, 0.9);
+        
+}
+
+.contactContainer:hover{
+    transform: size(2)
+}
+
+.contactContainerForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.contactContainerForm > input,
+.contactContainerForm > textarea {
+    padding: 1vmax;
+    outline: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-family: "Roboto";
+}
+
+.contactHead{
+   margin-top: 10px;
+    flex-direction: column;
+}
+
+.contactContainerForm > textarea{
+    height: 30%;
+}

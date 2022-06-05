@@ -30,6 +30,10 @@
 
 
 
+
+
+
+
 .main{
     background-color:rgb(255, 255, 255);
     margin: 10vh;
@@ -45,7 +49,7 @@
 }
 
 .card{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(236, 236, 236);
     box-shadow: 0 2px 20px rgba(9, 19, 97, 0.9);
     overflow: hidden;
     display: flex;
@@ -53,7 +57,9 @@
     justify-content: space-between;
     cursor: pointer;
     width: 15vw;
+    border-radius: 10px;
     transition: transform 100ms ease-in;
+    animation: cardAnimation 1s ease-in-out 1s;
 }
 
 .card:hover{
@@ -86,6 +92,23 @@
     background: transparent;
 }
 
+
 .card_technologies{
     font-weight: bold;
+}
+
+.ProjectHead{
+    
+    margin-top: 1.5%;
+    margin-left: 8%;    
+    
+}
+
+@keyframes cardAnimation{
+    from{
+        transform: scale(0.1)
+    }
+    to{
+        transform: scale(1)
+    }
 }
