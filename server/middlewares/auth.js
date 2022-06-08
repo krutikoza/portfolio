@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 export const isAuthenticated = async(req,res, next) => {
     try {
         const {token} = req.cookies;
-
+        
         if(!token) {
             return res.status(400).json({
                 success: false,
@@ -13,9 +13,9 @@ export const isAuthenticated = async(req,res, next) => {
         }
 
         const decode = jwt.verify(token, process.env.JWT_SECRET);
-
-        const user = User.findById(decoded._id);
-
+        
+        const user = User.findById(decode._id);
+        
         req.user = user;
 
         next();
