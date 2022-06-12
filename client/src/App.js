@@ -13,10 +13,17 @@ import Header from './Pages/Header/Header.js'
 import Footer from './Pages/Footer/Footer.jsx'
 
 
-
-
+import {useEffect} from "react";
+import {useDispatch} from "react-redux"
+import {getUser, loadUser} from "./actions/user"
 
 function App() {
+
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(getUser());
+    dispatch(loadUser());
+  },[dispatch]);
 
   return (
     <div>

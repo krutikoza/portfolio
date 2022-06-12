@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {Button, Typography} from "@mui/material"
 
+import { login } from "../../actions/user"
+import {useDispatch} from "react-redux"
 
 import "./Login.css"
 
@@ -9,9 +11,11 @@ const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const dispatch = useDispatch();
 
     const submitHandler = (e) => {
         e.preventDefault();
+        dispatch(login(email,password))
     }
 
   return (
