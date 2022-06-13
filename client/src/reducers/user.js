@@ -11,12 +11,11 @@ export const userReducer = createReducer(initialState,{
     GET_USER_SUCCESS: (state, action)=>{
         state.loading = false;
         state.user = action.payload;
-        state.message = action.payload;
     },
     GET_USER_FAILURE: (state, action)=>{
         state.loading = false;
         state.error = action.payload;
-        state.error = action.payload;
+        
     },
 
 })
@@ -41,23 +40,23 @@ export const loginReducer = createReducer({},{
     },
 
 
-    LOAR_USER_REQUEST: (state, action)=>{
+    LOAD_USER_REQUEST: (state, action)=>{
         state.loading = true;
         state.isAuthenticated = false;
     },
-    LOAR_USER_SUCCESS: (state, action)=>{
+    LOAD_USER_SUCCESS: (state, action)=>{
         state.loading = false;
         state.isAuthenticated = true;
         state.user = action.payload;
     },
-    LOAR_USER_FAILURE: (state, action)=>{
+    LOAD_USER_FAILURE: (state, action)=>{
         state.loading = false;
         state.isAuthenticated = false;
         state.error = action.payload;
     },
 
 
-    LOGOUT_REQUEST: (state, action)=>{
+    LOGOUT_REQUEST: (state)=>{
         state.loading = true;
         
     },
@@ -80,5 +79,66 @@ export const loginReducer = createReducer({},{
     CLEAR_MESSAGES: (state)=>{
         state.messages = null
     }
+
+})
+
+
+export const updateReducer = createReducer({},{
+    UPDATE_USER_REQUEST:(state)=>{
+        state.loading = true;
+    },
+    UPDATE_USER_SUCCESS: (state, action)=>{
+        state.loading = false;
+        state.message = action.payload;
+        
+    },
+    UPDATE_USER_FAILURE: (state, action)=>{
+        state.loading = false;
+        state.error = action.payload;
+    },
+
+
+
+    ADD_TIMELINE_REQUEST:(state)=>{
+        state.loading = true;
+    },
+    ADD_TIMELINE_SUCCESS: (state, action)=>{
+        state.loading = false;
+        state.message = action.payload;
+        
+    },
+    ADD_TIMELINE_FAILURE: (state, action)=>{
+        state.loading = false;
+        state.error = action.payload;
+    },
+
+
+    DELETE_TIMELINE_REQUEST:(state)=>{
+        state.loading = true;
+    },
+    DELETE_TIMELINE_SUCCESS: (state, action)=>{
+        state.loading = false;
+        state.message = action.payload;
+        
+    },
+    DELETE_TIMELINE_FAILURE: (state, action)=>{
+        state.loading = false;
+        state.error = action.payload;
+    },
+
+
+    ADD_PROJECT_REQUEST:(state)=>{
+        state.loading = true;
+    },
+    ADD_PROJECT_SUCCESS: (state, action)=>{
+        state.loading = false;
+        state.message = action.payload;
+        
+    },
+    ADD_PROJECT_FAILURE: (state, action)=>{
+        state.loading = false;
+        state.error = action.payload;
+    },
+
 
 })

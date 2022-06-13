@@ -66,13 +66,13 @@ export const login = (email, password) => async(dispatch) => {
 
 
 
-export const logout = (email, password) => async(dispatch) => {
+export const logout = () => async(dispatch) => {
     try {
         dispatch({
             type: "LOGOUT_REQUEST",
         });
-
-        const {data} = await axios.post("/api/v1/logout");
+        
+        const {data} = await axios.get("/api/v1/logout");
 
         dispatch({
             type: "LOGOUT_SUCCESS",
@@ -96,13 +96,56 @@ export const logout = (email, password) => async(dispatch) => {
 export const loadUser = (email, password) => async(dispatch) => {
     try {
         dispatch({
-            type: "LOAR_USER_REQUEST",
+            type: "LOAD_USER_REQUEST",
         });
 
         const {data} = await axios.get("/api/v1/me");
 
         dispatch({
-            type: "LOAR_USER_SUCCESS",
+            type: "LOAD_USER_SUCCESS",
+            payload: data.user,
+        });
+    
+
+
+
+    } catch (error) {
+        dispatch({
+            type: "LOAD_USER_FAILURE",
+            payload: error.response.data.message,
+        });
+        
+    }
+}
+
+
+
+
+
+
+export const updateUser = (name, email, password, about, skills) => async(dispatch) => {
+    try {
+        dispatch({
+            type: "UPDATE_USER_REQUEST",
+        });
+        
+        
+        const {data} = await axios.put("/api/v1/admin/update", {
+            name, 
+            email, 
+            password, 
+            about, 
+            skills
+        }, {
+            headers: {
+                "Content-Type": "application/json"
+            },
+        })
+
+        
+
+        dispatch({
+            type: "UPDATE_USER_SUCCESS",
             payload: data.message,
         });
     
@@ -111,9 +154,102 @@ export const loadUser = (email, password) => async(dispatch) => {
 
     } catch (error) {
         dispatch({
-            type: "LOAR_USER_FAILURE",
+            type: "UPDATE_USER_FAILURE",
             payload: error.response.data.message,
         });
         
+    }
+}
+
+
+
+export const addTimeline = (title, description, date) => async(dispatch) => {
+    try {
+        dispatch({
+            type: "ADD_TIMELINE_REQUEST",
+        });
+        
+        
+        const {data} = await axios.post("/api/v1/admin/timeline/add", {
+            title, 
+            description, 
+            date
+
+        }, {
+            headers: {
+                "Content-Type": "application/json"
+            },
+        })
+
+        
+
+        dispatch({
+            type: "ADD_TIMELINE_SUCCESS",
+            payload: data.message,
+        });
+    
+
+
+
+    } catch (error) {
+        dispatch({
+            type: "ADD_TIMELINE_FAILURE",
+            payload: error.response.data.message,
+        });
+        
+    }
+}
+
+
+
+export const deleteTimeline = (id) => async(dispatch) => {
+    try {
+        dispatch({
+            type: "DELETE_TIMELINE_REQUEST",
+        });
+        
+        
+        const {data} = await axios.delete(`/api/v1/admin/timeline/${id}`, {
+            
+        })
+
+        
+
+        dispatch({
+            type: "DELETE_TIMELINE_SUCCESS",
+            payload: data.message,
+        }); 
+    
+
+
+
+    } catch (error) {
+        dispatch({
+            type: "DELETE_TIMELINE_FAILURE",
+            payload: error.response.data.message,
+        });
+        
+    }
+}
+
+
+
+export const addProject = (title, url, image, discription, techStack) => async (dispatch) =>{
+    try {
+        dispatch({type: "ADD_PROJECT_REQUEST",});
+        
+        const {data} = await axios.post("/api/v1/admin/project/add",
+        {title, url, image,  discription, techStack},
+        {
+            headers:{
+                "Content-Type": "application/json"
+            }
+        }
+        )
+
+        dispatch({type: "ADD_PROJECT_SUCCESS"})
+        
+    } catch (error) {
+        dispatch({type: "ADD_PROJECT_FAILURE"})
     }
 }

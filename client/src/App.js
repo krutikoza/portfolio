@@ -11,13 +11,18 @@ import Contact from './Pages/Contact/Contact'
 import Login from './Pages/Login/Login'
 import Header from './Pages/Header/Header.js'
 import Footer from './Pages/Footer/Footer.jsx'
+import Timeline from './Pages/Admin/Timeline'
 
 
 import {useEffect} from "react";
-import {useDispatch} from "react-redux"
+import {useDispatch, useSelector } from "react-redux"
 import {getUser, loadUser} from "./actions/user"
+import AdminPanel from "./Pages/Admin/AdminPanel"
+import Project from "./Pages/Admin/Project"
 
 function App() {
+  const { isAuthenticated } = useSelector((state) => state.login);
+  const { loading, user } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
   useEffect(()=>{
@@ -31,21 +36,24 @@ function App() {
     {/* Routing */}
       <Router>
 
-        
+        {loading?<div>Loading...</div>:(
+          <>
         {<Header />}
 
         <Routes>
         
-          <Route path="/" element={<Home />}/>
-          <Route path="/About" element={<About />}/>
-          <Route path="/Login" element={<Login />}/>
+          <Route path="/" element={<Home />}/> 
           
           <Route path="/About" element={<About />}/>
           <Route path="/Projects" element={<Projects/>}/>
           <Route path="/Contact" element={<Contact/>}/>
           <Route path="/Home" element={<Home/>}/>
-          <Route path="/Login" element={<Login/>}/>
+          <Route path="/Login" element={isAuthenticated?<AdminPanel/>:<Login/>}/>
+          <Route path="/admin/timeline" element={isAuthenticated?<Timeline/>:<Login/>}/>
+          <Route path="/admin/project" element={isAuthenticated?<Project/>:<Login/>}/>
         </Routes>
+        </>)}
+
       </Router>
   
     <Footer />

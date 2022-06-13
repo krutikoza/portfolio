@@ -94,7 +94,7 @@ const Projects = () => {
 }
 
 
-function Card(values)
+export function Card(values)
     
     {
         console.log(values.projectTitle)
@@ -117,3 +117,4 @@ function Card(values)
     )
 }
 export default Projects
+
