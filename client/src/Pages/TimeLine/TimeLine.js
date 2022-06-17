@@ -11,7 +11,7 @@ import EventTwoToneIcon from '@mui/icons-material/EventTwoTone';
 import Typography from "@mui/material/Typography"
 import Link from '@mui/material/Link';
 
-const TimeLine = ({timelines=[]}) => {
+const TimeLine = ({timelines=[1,2,3]}) => {
   return (
     <div>
       <Timeline position="alternate">

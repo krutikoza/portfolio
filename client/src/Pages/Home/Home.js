@@ -17,10 +17,12 @@ import mdbImage from "../../Images/mdb.png"
 import jsImage from "../../Images/JavaScript.png"
 import html5 from "../../Images/html5.png"
 import threejs from "../../Images/threejs.png"
+import {BsFillMouse2Fill} from "react-icons/bs";
 
 import { SiReact, SiPython, SiMongodb, SiNodedotjs, SiHtml5, SiCss3, SiExpress, SiNumpy } from "react-icons/si";
+import { SchemaTypes } from 'mongoose'
 
-const Home = () => {
+const Home = (timelines, skills) => {
 
 
   useEffect(() => {
@@ -81,7 +83,11 @@ const Home = () => {
     scene.add(pointlight2)
     scene.background = backgroundTexture
 
-    
+    window.addEventListener("mousemove", (e) => {
+      
+      camera.position.x = ( e.clientX - window.innerWidth/2 )* 0.001
+      camera.position.y = - ( e.clientY - window.innerHeight/2 )* 0.001
+    })
     //scene.add(lightHelper)
     camera.position.z = 20
 
@@ -98,7 +104,12 @@ const Home = () => {
 
     }
 
-    animate()
+    animate();
+
+    window.addEventListener("scroll",(e)=>{
+      camera.rotation.y=window.scrollY*0.001;
+      camera.rotation.z=window.scrollY*0.001;
+    })
   }, [])
 
 
@@ -132,7 +143,7 @@ const Home = () => {
 
     // create a scene and camera
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(90, window.innerWidth/ window.innerHeight, 0.1, 1000)
+    const camera = new THREE.PerspectiveCamera(120, window.innerWidth/ window.innerHeight, 0.1, 1000)
 
     // create a canvas and render
     const canvas = document.querySelector(".homeSkillsCanvas");
@@ -146,8 +157,8 @@ const Home = () => {
     const material = new THREE.MeshFaceMaterial( cubeTexture, { transparent: true, opacity: 0.9} );
 
     const geometryBase = new THREE.BoxGeometry( 1000, 1, 1000 );
-    const materialBase = new THREE.MeshStandardMaterial( {color: 0X0D6393} );
-
+    const materialBase = new THREE.MeshStandardMaterial( {color: 0Xa000ff} );
+    const materialWall = new THREE.MeshStandardMaterial( {color: 0Xa000ff} );
     
     const pointlight = new THREE.PointLight(0xFFFFFF,1)
     pointlight.castShadow = true;
@@ -159,6 +170,7 @@ const Home = () => {
     // create an object to render
     const cube = new THREE.Mesh( geometry, material );
     const base = new THREE.Mesh( geometryBase, materialBase );
+    const wall = new THREE.Mesh( geometryBase, materialWall );
     
     // shadow
     cube.castShadow = true;
@@ -176,14 +188,17 @@ const Home = () => {
     // add that object into our scene
     scene.add(cube)
     scene.add(base)
+    scene.add(wall)
     scene.add(pointlight)
+    
     //scene.add(lightHelper)
 
+    
     
     camera.position.z = 35
     base.position.y = -10
     cube.rotation.x += 5;
-    
+    wall.position.y += 70
     function animate() {
       requestAnimationFrame( animate );
       
@@ -201,10 +216,33 @@ const Home = () => {
   return (
     <div className="home">
       <canvas className="homeCanvas"></canvas>
+      <div className="homeCanvasContainer">
+        
+        <Typography variant="h1">
+          <p>K</p>
+          <p>R</p>
+          <p>U</p>
+          <p>T</p>
+          <p>I</p>
+          <p>K</p>
+        </Typography>
+
+        <div className="homeCanvasBox">
+          <Typography variant="h2">Developer</Typography>
+          <Typography variant="h2">Create</Typography>
+          <Typography variant="h2">Create</Typography>
+          <Typography variant="h2">Create</Typography>
+        </div>
+        <div className="homeScroll">
+        <BsFillMouse2Fill/>
+        </div>
+      </div>
       
 
       <div className="homeContainer">
+        
         <Typography variant="h3"> TIMELINE</Typography>
+        
 
         <TimeLine timelines = {[1,2,3,4]} />
       </div>

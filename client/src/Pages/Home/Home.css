@@ -1,7 +1,85 @@
 .homeCanvas{
     width: 100vw;
     height: 100vh;
-    max-width: 100%;
+    max-width: 100%;  
+    position: absolute;
+    animation-delay: 20s;
+    animation: blurAnimate 5s linear forwards;
+}
+
+
+
+.homeCanvasContainer{
+    background-color: rgba(255,255,255,0.1);
+    width: 100%;
+    z-index:2;
+    position: relative;
+    height: 100vh;
+    color: white;
+}
+
+.homeScroll{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transform: translateY(-50%);
+    border-radius: 200%;
+    left:50%;
+    bottom: 0%;
+    padding: 0.5vmax;
+    animation: scrollPop 0.5s ease-in infinite alternate;
+}
+
+.homeScroll > svg{
+    font-size: 3vmax;
+}
+
+.homeCanvasContainer> h1{
+    filter: drop-shadow(0 0 20px rgb(176, 0, 0));
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    background-color: rgb(255, 255, 255, 0.8);
+    padding: 2vmax;
+    transform: translate(0%, -50%);
+    text-align: center;
+    border-radius: 10px 0 0 10px;
+    font: 700 4vmax "Josefin Sans", sans-serif;
+    animation: nameAnimation 1s ease-in-out forwards ;
+
+}
+
+@keyframes nameAnimation {
+    from{
+        transform: translateX(10vw);
+        
+    }
+    
+}
+
+.homeCanvasContainer> h1> p{
+    transition: all 0.1s;
+    color: black;
+}
+
+.homeCanvasBox{
+    position: absolute;
+    top:50%;
+    left:4%;
+    text-align: left;
+    transform: translate(0%, -50%);
+    
+}
+
+.homeCanvasBox > h2{
+    font: 900 4rem "Ubuntu Mono", "Roboto";
+    letter-spacing: 22px;
+    line-height: 80px;
+}
+
+.homeCanvasContainer> h1> p:hover{
+    transform: translateY(-10px);
 }
 
 .homeSkillsCanvas{
@@ -125,3 +203,21 @@
         
     }
 }
+
+
+
+@keyframes scrollPop {
+    from{
+        transform: translateY(-20%)
+    }
+  
+}
+
+@keyframes blurAnimate {
+    from{
+        filter: blur(0px);
+    }
+    to{
+        filter: blur(10px);
+    }
+};
