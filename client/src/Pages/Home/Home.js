@@ -200,6 +200,7 @@ const Home = (timelines, skills) => {
     cube.rotation.x += 5;
     wall.position.y += 70
     function animate() {
+      
       requestAnimationFrame( animate );
       
       cube.rotation.y += 0.010;
