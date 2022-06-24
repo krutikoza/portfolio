@@ -6,6 +6,7 @@ import {useDispatch} from "react-redux"
 
 import "./Login.css"
 
+
 const Login = () => {
 
     const [email, setEmail] = useState("")
@@ -17,7 +18,7 @@ const Login = () => {
         e.preventDefault();
         dispatch(login(email,password))
     }
-
+    
   return (
     <div className="login">
         <div className="loginContainer">

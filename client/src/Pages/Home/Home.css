@@ -2,8 +2,8 @@
     width: 100vw;
     height: 100vh;
     max-width: 100%;  
+    max-height: 100%;
     position: absolute;
-    animation-delay: 20s;
     animation: blurAnimate 5s linear forwards;
 }
 
@@ -98,7 +98,9 @@
     padding: 4vmax;
     border-radius: 0 0 100px 100px;
     border-bottom: 100px solid rgb(255, 255, 255);
-    z-index: 1;
+    max-height: 100%;
+    max-width: 100%;
+    z-index: -1;
     
 }
 
@@ -114,7 +116,7 @@
     justify-content: space-around;
     align-items: center;
     overflow-x: hidden;
-    margin-top: -7vw;
+    /* margin-top: -7vw; */
     z-index: -1;
 }
 

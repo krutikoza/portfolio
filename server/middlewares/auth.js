@@ -11,14 +11,28 @@ export const isAuthenticated = async(req,res, next) => {
                 message: "Login to access this page",
             })
         }
-
+        
         const decode = jwt.verify(token, process.env.JWT_SECRET);
         
-        const user = User.findById(decode._id);
+        // const user = await User.findById(decode._id);
         
-        req.user = user;
-
-        next();
+        User.findById(decode._id, function (err, docs) {
+            if(err){
+                return res.status(400).json({
+                    success: false,
+                    message: error.message,
+                })
+            }
+            else{
+                req.user = docs;
+                console.log(req.user)
+                next();
+            }
+        });
+        
+        
+        // req.user = user;
+        // next();
     }
     catch (error){
         return res.status(400).json({

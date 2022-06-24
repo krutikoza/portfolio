@@ -111,7 +111,6 @@ const AdminPanel = () => {
                     <p>E</p>
                     <p>L</p>
             </Typography>
-
             <form onSubmit={submitHandler}>
                 <input 
                 type= "email"
@@ -202,50 +201,42 @@ const AdminPanel = () => {
                 <div className="adminPanelAbout">
                     <fieldset>
                         <legend>About</legend>
+
                         <input 
                         type="text"
                         placeholder="Name"
                         value={about.name}
-                        onChange={(e) => setAbout({...about, name: e.target})}
-                        className="adminPanelInputs"
-                        />
-                        <input 
-                        type="text"
-                        placeholder="About"
-                        value={about.name}
-                        onChange={(e) => setAbout({...about, name: e.target})}
+                        onChange={(e) => setAbout({...about, name: e.target.value})}
                         className="adminPanelInputs"
                         />
                         <input 
                         type="text"
                         placeholder="Title"
-                        value={about.name}
-                        onChange={(e) => setAbout({...about, name: e.target})}
+                        value={about.title}
+                        onChange={(e) => setAbout({...about, title: e.target.value})}
                         className="adminPanelInputs"
                         />
                         <input 
                         type="text"
                         placeholder="Subtitle"
-                        value={about.name}
-                        onChange={(e) => setAbout({...about, name: e.target})}
+                        value={about.subtitle}
+                        onChange={(e) => setAbout({...about, subtitle: e.target.value})}
                         className="adminPanelInputs"
                         />
-                        {console.log(about)}
                         <input 
                         type="text"
                         placeholder="Discription"
-                        value={about.name}
-                        onChange={(e) => setAbout({...about, name: e.target})}
+                        value={about.discription}
+                        onChange={(e) => setAbout({...about, discription: e.target.value})}
                         className="adminPanelInputs"
                         />
                         <input 
                         type="text"
                         placeholder="Quote"
-                        value={about.name}
-                        onChange={(e) => setAbout({...about, name: e.target})}
+                        value={about.quote}
+                        onChange={(e) => setAbout({...about, quote: e.target.value})}
                         className="adminPanelInputs"
                         />
-
                         <input 
                         type="file"
                         accept="image/*"

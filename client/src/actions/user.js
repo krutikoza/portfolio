@@ -8,7 +8,7 @@ export const getUser = () => async(dispatch) => {
         });
         
         const {data} = await axios.get("/api/v1/user");
- 
+        console.log("data::",data)
 
         dispatch({
             type: "GET_USER_SUCCESS",
@@ -21,7 +21,7 @@ export const getUser = () => async(dispatch) => {
             type: "GET_USER_FAILURE",
             payload: error.response.data.message,
         });
-        const {data} = await axios.get("/api/v1/users");
+        // const {data} = await axios.get("/api/v1/users");
     }
 }
 
@@ -30,6 +30,7 @@ export const getUser = () => async(dispatch) => {
 
 export const login = (email, password) => async(dispatch) => {
     try {
+        
         dispatch({
             type: "LOGIN_REQUEST",
         });
@@ -165,6 +166,7 @@ export const updateUser = (name, email, password, about, skills) => async(dispat
 
 export const addTimeline = (title, description, date) => async(dispatch) => {
     try {
+        // console.log("title, description, date::",title, description, date)
         dispatch({
             type: "ADD_TIMELINE_REQUEST",
         });

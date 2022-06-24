@@ -9,7 +9,7 @@ export const login = async (req, res) => {
 
       
       const user = await User.findOne({ email, password });
-      console.log(user)
+      
       if (!user) {
         return res.status(400).json({
           success: false,
@@ -27,7 +27,7 @@ export const login = async (req, res) => {
         })
         .json({
           success: true,
-          message: "Logged In Successfully",
+          message: "Logged In Successfully!!",
         });
     } catch (error) {
       return res.status(400).json({
@@ -66,7 +66,7 @@ export const login = async (req, res) => {
   export const getUser = async (req, res) => {
     try {
       const user = await User.findOne().select("-password -email");
-  
+      
       res.status(200).json({
         success: true,
         user,
@@ -82,7 +82,7 @@ export const login = async (req, res) => {
   export const myProfile = async (req, res) => {
     try {
       const user = await User.findById(req.user._id);
-  
+      
     
       res.status(200).json({
         success: true,
@@ -258,9 +258,9 @@ export const login = async (req, res) => {
   export const addTimeline = async (req, res) => {
     try {
       const { title, description, date } = req.body;
-  
+      
       const user = await User.findById(req.user._id);
-  
+      
       user.timeline.unshift({
         title,
         description,
@@ -289,10 +289,11 @@ export const login = async (req, res) => {
       const { url, title, image, description, techStack } = req.body;
   
       const user = await User.findById(req.user._id);
-  
+      
       const myCloud = await cloudinary.v2.uploader.upload(image, {
         folder: "portfolio",
       });
+      
       user.projects.unshift({
         url,
         title,
@@ -303,9 +304,9 @@ export const login = async (req, res) => {
           url: myCloud.secure_url,
         },
       });
-  
+      
       await user.save();
-  
+      
       res.status(200).json({
         success: true,
         message: "Added To Projects",

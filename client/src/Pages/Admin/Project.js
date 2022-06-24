@@ -110,7 +110,7 @@ const Project = () => {
             accept="image/*"
           />
 
-          <Link to="/account">
+          <Link to="/login">
             BACK <MdKeyboardBackspace />
           </Link>
 
