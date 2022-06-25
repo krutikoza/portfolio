@@ -99,13 +99,20 @@ body{
 .card_face_front{
     background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    
+}
+
+.frontTitle{
+    color: #FFF;
+    font-size: 40px;
 }
 
 .card_face_front h2{
     color: #FFF;
     font-size: 32px;
+    margin-bottom:0px;
 }
 
 .card_face_back{
