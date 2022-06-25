@@ -1,5 +1,5 @@
 
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {AiOutlineProject} from "react-icons/ai";
 
@@ -19,18 +19,29 @@ import sampleImage from "../../Images/react.png"
 const Projects = () => {
 
     
-    function flip (){
-        
-        const card = document.querySelector('.card_inner')
-        card.classList.toggle('is-flipped');  
-    }
+    
     const arr = [1,2,3,4,5,6]
     return(
         <div className="project">
 
         {arr.map((index) =>(
-            <div className="card">
-            <div className="card_inner" onClick={flip}>
+            <Card />
+        ))}
+
+        
+        </div>
+    )
+}
+
+
+
+export function Card(){
+
+    const [flip, setFlip] = useState(false)
+
+    return(
+        <div className="card">
+            <div className={flip === true ? 'card_inner is-flipped':"card_inner"} onClick={() => setFlip(!flip)}>
                 <div className="card_face card_face_front" >
                     <h2>Developer card</h2>
                 </div>
@@ -53,18 +64,6 @@ const Projects = () => {
                 </div>
             </div>
         </div>
-        ))}
-
-        
-        </div>
-    )
-}
-
-
-
-export function Card(values){
-    return(
-        <>Cards</>
     )
 }
 
