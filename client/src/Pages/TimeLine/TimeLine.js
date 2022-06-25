@@ -11,14 +11,15 @@ import EventTwoToneIcon from '@mui/icons-material/EventTwoTone';
 import Typography from "@mui/material/Typography"
 import Link from '@mui/material/Link';
 
-const TimeLine = ({timelines=[1,2,3]}) => {
+const TimeLine = ({timelines}) => {
   return (
     <div>
       <Timeline position="alternate">
     {
           timelines.map((item,index) => (
+            
               <TimelineItem key={index}>
-                <TimelineOppositeContent sx={{m:"auto 0"}} align="right" variant="body2" color="text.primary">26/11/1999</TimelineOppositeContent>
+                <TimelineOppositeContent sx={{m:"auto 0"}} align="right" variant="body2" color="text.primary">{item.date}</TimelineOppositeContent>
                 
                 <TimelineSeparator>
                     <TimelineConnector />
@@ -30,9 +31,8 @@ const TimeLine = ({timelines=[1,2,3]}) => {
                 
                 <TimelineContent>
                 
-                    <Link underline="hover" variant="h6" color = "Black" >Title</Link>
-                    <Typography> Discription</Typography>
-                    <Typography>Date</Typography>
+                    <Link underline="hover" variant="h6" color = "Black" >{item.title}</Link>
+                    <Typography> {item.description}</Typography>
                 </TimelineContent>
               </TimelineItem>
           ))

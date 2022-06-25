@@ -25,7 +25,7 @@ export const isAuthenticated = async(req,res, next) => {
             }
             else{
                 req.user = docs;
-                console.log(req.user)
+                
                 next();
             }
         });

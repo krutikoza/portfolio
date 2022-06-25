@@ -42,7 +42,7 @@ export const login = async (req, res) => {
 
   export const logout = async (req, res) => {
     try {
-      console.log("This is inside logout api!!")
+      
       res
         .status(200)
         .cookie("token", null, {
@@ -266,7 +266,7 @@ export const login = async (req, res) => {
         description,
         date,
       });
-  
+
       await user.save();
   
       res.status(200).json({

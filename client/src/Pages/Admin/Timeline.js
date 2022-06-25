@@ -18,7 +18,7 @@ const Timeline = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
-
+  
   const submitHandler = async (e) => {
     e.preventDefault();
     await dispatch(addTimeline(title, description, date));
@@ -82,6 +82,7 @@ const Timeline = () => {
             placeholder="Date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
+            // onChange = {(e)=> console.log(e.target.value)}
             className="adminPanelInputs"
           />
 

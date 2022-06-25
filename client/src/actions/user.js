@@ -166,15 +166,15 @@ export const updateUser = (name, email, password, about, skills) => async(dispat
 
 export const addTimeline = (title, description, date) => async(dispatch) => {
     try {
-        // console.log("title, description, date::",title, description, date)
+        console.log("title, description, date::",title, description, date)
         dispatch({
             type: "ADD_TIMELINE_REQUEST",
         });
         
-        
+        console.log("Date::", date)
         const {data} = await axios.post("/api/v1/admin/timeline/add", {
             title, 
-            description, 
+            description,
             date
 
         }, {
