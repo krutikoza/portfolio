@@ -1,5 +1,5 @@
 
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef } from 'react';
 
 import {AiOutlineProject} from "react-icons/ai";
 
@@ -11,25 +11,40 @@ import styled from 'styled-components'
 
 import sampleImage from "../../Images/react.png"
 
+import { AiFillLeftCircle, AiFillRightCircle } from "react-icons/ai";
 
 
 
 
 
 const Projects = () => {
+    const ref = useRef(null);
 
-    
-    
+    const slideLeft = () =>{
+        const slide = document.getElementById("project").scrollLeft -= 250;
+    }
+    const slideRight = () =>{
+        const slide = document.getElementById("project").scrollLeft += 250;
+        
+    }
     const arr = [1,2,3,4,5,6]
     return(
-        <div className="project">
+    <div className="main">
+        <div className="heading">Projects</div>
+        <div className="main-slider-container">
+            <AiFillLeftCircle size={100} className="leftArrow" onClick={slideLeft}/>
+            
+                <div className="project" id="project">
+                                    
+                        {arr.map((index) =>(
+                            <Card />
+                        ))}
 
-        {arr.map((index) =>(
-            <Card />
-        ))}
-
-        
+                </div>
+            
+            <AiFillRightCircle size={100} className="rightArrow" onClick={slideRight}/>
         </div>
+    </div>
     )
 }
 
