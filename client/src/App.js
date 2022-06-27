@@ -48,7 +48,7 @@ function App() {
           <Route path="/Projects" element={<Projects/>}/>
           <Route path="/Contact" element={<Contact/>}/>
           <Route path="/Home" element={<Home/>}/>
-          <Route path="/Login" element={isAuthenticated?<AdminPanel/>:<Login/>}/>
+          <Route path="/Account" element={isAuthenticated?<AdminPanel/>:<Login/>}/>
           <Route path="/admin/timeline" element={isAuthenticated?<Timeline/>:<Login/>}/>
           <Route path="/admin/project" element={isAuthenticated?<Project/>:<Login/>}/>
         </Routes>

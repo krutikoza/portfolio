@@ -43,16 +43,48 @@ body{
 }
 
 .main{
-    background-color: rgb(41, 28, 113);
+    background-color: rgb(17, 13, 77);
 }
 
 .heading{
+    color: #FFF;
     position: absolute;
     width: 100%;
     font-size: 4vmax;
     display: flex;
     justify-content: center;
     align-items:center;
+}
+
+
+.leftArrow , .rightArrow{
+    color:rgb(255, 255, 255, 0.5);
+    font-size: 4rem;
+    position: absolute;
+    transition: 0.1s ease-in-out;
+
+}
+
+.rightArrow:hover{
+    color:rgb(255, 255, 255, 1);
+    size: 300;
+    font-size: 5rem;
+}
+
+.leftArrow:hover{
+    color:rgb(255, 255, 255, 1);
+    size: 300;
+    font-size: 5rem;
+}
+
+.rightArrow{
+    right:0;
+
+}
+
+.leftArrow{
+    left:0;
+    z-index: 1;
 }
 
 /* hide scrollbar */
