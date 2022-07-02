@@ -43,11 +43,11 @@ body{
 }
 
 .main{
-    background-color: rgb(17, 13, 77);
+    background-color: rgb(252, 252, 252);
 }
 
 .heading{
-    color: #FFF;
+    color: rgb(0, 0, 0);
     position: absolute;
     width: 100%;
     font-size: 4vmax;
