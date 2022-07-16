@@ -72,10 +72,10 @@
     
 }
 
-.homeCanvasBox > h2{
+.font-weight-bold{
     font: 900 4rem "Ubuntu Mono", "Roboto";
-    letter-spacing: 22px;
-    line-height: 80px;
+    /* letter-spacing: 22px;
+    line-height: 80px; */
 }
 
 .homeCanvasContainer> h1> p:hover{

@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux"
 import store from "./Store"
 
+import '/node_modules/bootstrap/dist/css/bootstrap.css'
+
 // import {Provider as alertProvider} from "react-alert"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

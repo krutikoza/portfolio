@@ -236,10 +236,10 @@ const Home = (timelines, skills) => {
         </Typography>
 
         <div className="homeCanvasBox">
-          <Typography variant="h2">Developer</Typography>
-          <Typography variant="h2">Create</Typography>
-          <Typography variant="h2">Create</Typography>
-          <Typography variant="h2">Create</Typography>
+          <h1 className="display-1 "><strong>Full Stack Developer</strong></h1>
+          <h1 className="display-1 "><strong>Create</strong></h1>
+          <h1 className="display-1 "><strong>Create</strong></h1>
+          <h1 className="display-1 "><strong>Create</strong></h1>
         </div>
         <div className="homeScroll">
         <BsFillMouse2Fill/>
