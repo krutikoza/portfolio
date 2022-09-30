@@ -3,12 +3,16 @@ import "./Footer.css"
 import Typography from '@mui/material/Typography';
 import { AiOutlineMail, AiFillGithub, AiOutlineInstagram, AiOutlineLinkedin } from "react-icons/ai";
 import Link from '@mui/material/Link';
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="footerBackground">
         <div>
-            <Typography variant="h5" color="white">About Me</Typography>
+            <typography className="aboutText" variant="h5" color="white" onClick = {()=>navigate("/about")}>About Me</typography>
             <Typography color="white"> Hello, My name is Krutik. I am a software developer.</Typography>
 
             <Link to="/About"></Link>

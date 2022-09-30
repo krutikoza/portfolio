@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-import "./AdminPanel.css"
+
 import {logout, updateUser} from "../../actions/user"
 
 import {Typography, Button} from "@mui/material"
@@ -10,6 +10,8 @@ import {MdTimeline} from "react-icons/md"
 import {Link} from "react-router-dom"
 import {useDispatch, useSelector} from "react-redux"
 
+
+import "./AdminPanel.css"
 
 
 const AdminPanel = () => {
@@ -98,7 +100,7 @@ const AdminPanel = () => {
   return (
     <div className="adminPanel">
       <div className="adminPanelContainer">
-            <Typography variant="h4">
+            <typography variant="h4">
                     <p>A</p>
                     <p>D</p>
                     <p>M</p>
@@ -110,7 +112,7 @@ const AdminPanel = () => {
                     <p>N</p>
                     <p>E</p>
                     <p>L</p>
-            </Typography>
+            </typography>
             <form onSubmit={submitHandler}>
                 <input 
                 type= "email"

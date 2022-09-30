@@ -3,8 +3,8 @@
     --secondary: #FE4880;
     --dark: #212121;
     --light: #f3f3f3;
-
-
+    --front1: #2f5174;
+    --front2: #3c8a93;
 }
 
 
@@ -50,6 +50,16 @@ body{
     background-color: rgb(208, 239, 137);
 }
 
+.frontText{
+    
+    background-image: linear-gradient(to bottom right, var(--front1), var(--front2));
+}
+
+.frontText h3, p, b{
+    margin:15px;
+    color: rgb(255, 255, 255);
+}
+
 .heading{
     color: rgb(0, 0, 0);
     position: absolute;
@@ -58,11 +68,12 @@ body{
     display: flex;
     justify-content: center;
     align-items:center;
+    margin-top: 40px;
 }
 
 
 .leftArrow , .rightArrow{
-    color:rgb(255, 255, 255, 0.5);
+    color:rgba(0, 0, 0, 0.5);
     font-size: 4rem;
     position: absolute;
     transition: 0.1s ease-in-out;
@@ -70,13 +81,13 @@ body{
 }
 
 .rightArrow:hover{
-    color:rgb(255, 255, 255, 1);
+    color:rgb(4, 68, 151);
     size: 300;
     font-size: 5rem;
 }
 
 .leftArrow:hover{
-    color:rgb(255, 255, 255, 1);
+    color:rgb(4, 68, 151);
     size: 300;
     font-size: 5rem;
 }

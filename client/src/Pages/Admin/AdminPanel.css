@@ -21,6 +21,9 @@
     animation: contactFormInputs 1s ease-in-out forwards;
     justify-content: center;
   }
+
+
+
   .adminPanelContainer > h4 > p {
     transition: all 0.5s;
   }
@@ -123,4 +126,3 @@
   .adminPanelContainer > form > button:hover {
     background-color: hsl(221, 46%, 20%);
   }
-  

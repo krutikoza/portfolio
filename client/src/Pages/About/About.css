@@ -45,6 +45,34 @@
 }
 
 
+@media (max-width: 768px){
+    .aboutContainer1{
+        text-align: center;
+        height: 50vh;
+        width: 70%;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        left: 0;
+        margin-top: 26vh;
+        z-index: 1;
+        box-shadow: 0 0 16px rgb(0, 0, 0, 0.8);
+        transform: translateX(-100vw) rotateZ(-180deg);
+        animation: aboutAnimation 1s ease-in forwards;
+    }
+
+
+    .aboutContainer2{
+        text-align: center;
+        height: 50vh;
+        width: 60%;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        right: 0;
+        margin-top: 0vh; 
+        position: absolute;
+    }
+}
+
 
 @keyframes aboutAnimation {
     to{

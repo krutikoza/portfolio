@@ -14,3 +14,13 @@
     transform: scale(1.1);
     color: rgba(0,0,0);
 }
+
+.aboutText{
+    color: #FFF;
+    font-size: 2vmax;
+}
+
+.aboutText:hover{
+    transition: 0.1s ease-in-out;
+    font-size: 3vmax;
+}

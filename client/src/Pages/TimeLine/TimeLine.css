@@ -1,0 +1,50 @@
+.timeline{
+    max-width: 100%;
+    min-height: 70vh;
+    margin-top:60px;
+}
+
+.itemDiscription{
+    
+    font-size: 20px;
+}
+
+.itemTitle{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.discription{
+    display: flex;
+    flex-direction: column;
+}
+
+.inTimeline{
+    
+    opacity: 0;
+}
+
+@media (max-width: 600px){
+    .itemDiscription{
+        
+        font-size: 12px;
+    }
+
+    .itemTitle{
+        font-weight: bold;
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 370px){
+    .itemDiscription{
+        
+        font-size: 9px;
+    }
+
+    .itemTitle{
+        font-weight: bold;
+        font-size: 10px;
+    }
+}

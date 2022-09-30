@@ -38,8 +38,9 @@ function App() {
 
         {loading?<div>Loading...</div>:(
           <>
-        {<Header />}
-
+        {/* {<Header />} */}
+        
+          
         <Routes>
         
           <Route path="/" element={<Home timelines={user.timelines} skills={user.skills}/>}/> 
@@ -54,9 +55,10 @@ function App() {
         </Routes>
         </>)}
 
+        <Footer />
       </Router>
   
-    <Footer />
+    
 
     </div>
 
