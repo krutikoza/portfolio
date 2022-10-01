@@ -1,5 +1,6 @@
 
 import React, {useEffect, useState, useRef } from 'react';
+import {Link} from 'react-router-dom';
 
 import {AiOutlineProject} from "react-icons/ai";
 
@@ -20,9 +21,6 @@ import {useAnimation, motion} from 'framer-motion'
 
 
 const Projects = (projects) => {
-  
-
-
     
     
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -53,7 +51,7 @@ const Projects = (projects) => {
 
     return(
     <div className="main">
-        <div className="heading">Projects</div>
+        <b className="heading">Projects</b>
         <div className="main-slider-container">
             {scrollPosition != 0?<AiFillLeftCircle className="leftArrow" onClick={slideLeft}/>: <></>}
             
@@ -102,8 +100,11 @@ export function Card(project){
                         <div>
                             <h3 class="text-white fs-5">Details:</h3>
                             <p class="fs-6 text-white">{project.project.Details}</p>
-                            {/* <button type="button" class="btn btn-light" onClick={()=>console.log("Button clicked")}>Project page</button> */}
-                            <GoLogoGithub class="gitlogo"/>
+                            
+
+                            <a className="gitLogo" href={project.project.GitLink}>
+                                <GoLogoGithub class="gitlogo"/>
+                            </a>
                         </div>
                     </div>
                 </div>

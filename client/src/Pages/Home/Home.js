@@ -256,14 +256,14 @@ const Home = (timelines, skills) => {
           <h1 className="display-1 "><strong>Create</strong></h1>
         </div>
         <div className="homeScroll">
-        <BsFillMouse2Fill/>
+        <BsFillMouse2Fill onClick={() => window.scrollBy(0, window.innerHeight-window.pageYOffset)}/>
         </div>
       </div>
       
 
       <div className="homeContainer">
         
-        <Typography variant="h3"> TIMELINE</Typography>
+        <b className="timelineTitle"> TIMELINE</b>
         
 
         <TimeLine timelines = {user.timeline} />
@@ -283,6 +283,12 @@ const Home = (timelines, skills) => {
         
 
       {/* </div>  */}
+      
+      <div className="Projects">
+        <Projects projects = {user.projects}/>
+      </div>
+
+
       <div className = "skillList">
 
       <div className="homeSkillsBox">
@@ -298,8 +304,8 @@ const Home = (timelines, skills) => {
       
       </div>
 
-      <Projects projects = {user.projects}/>
-      
+
+
     </div>
   )
 }

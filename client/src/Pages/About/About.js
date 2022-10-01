@@ -10,6 +10,7 @@ import {useDispatch, useSelector} from "react-redux"
 // import mercuryImage from "../../Images/mercury.jpg"
 // import spaceBackground from "../../Images/spaceBackground.jpg"
 
+import aboutb from "./aboutB.mp4"
 
 
 
@@ -24,6 +25,9 @@ const About = () => {
     return (
         <div className="about">
 
+        <video autoPlay loop muted>
+          <source src={aboutb} type="video/mp4"></source>
+        </video>
             <div className="canvas">
                 <canvas className="homeCanvas"></canvas>
             </div>
@@ -35,9 +39,9 @@ const About = () => {
                     <Typography>{user.about.description}</Typography>
                     
                 </div>
-                <div className="aboutContainer2">
+                {/* <div className="aboutContainer2">
                     {user.about.quote}
-                </div>
+                </div> */}
             </div>
 
         </div>

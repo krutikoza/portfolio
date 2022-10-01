@@ -26,7 +26,7 @@ const TimeLine = ({timelines}) => {
       animation.start({
         
         transition:{
-          type: 'linear', duration: 1, 
+          type: 'linear', duration: 1.5, 
         },
         x: 0,
         opacity:1,

@@ -1,6 +1,7 @@
 
 .home{
-    overflow:hidden;
+    overflow: hidden;
+    /* background-color:rgb(254, 255, 246); */
 }
 .homeCanvas{
     width: 100%;
@@ -108,15 +109,18 @@ video{
 
 .homeContainer{
     text-align: center;
-    background-color: rgb(255, 255, 255);
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255),rgb(235, 225, 190));
+    
     padding: 4vmax;
-    border-radius: 0 0 100px 100px;
-    border-bottom: 100px solid rgb(255, 255, 255);
+    /* border-radius: 0 0 100px 100px; */
+    /* border-bottom: 100px solid rgb(255, 255, 255); */
     max-height: 100%;
     max-width: 100%;
     z-index: -1;
     
 }
+
+
 
 .homeSkills{
     background-color: rgb(29, 30, 68);
@@ -140,7 +144,10 @@ video{
     font-size: 4vmax;
     color: white;
 }
-
+.timelineTitle{
+    color:black;
+    font-size: 4vmax;
+}
 .homeCubeSkills{
     
     
@@ -166,14 +173,14 @@ video{
 
 
 .homeSkillsBox {
-    margin-top: -9.8vh;
+    margin-top: -15vh;
     justify-content: center;
     background-color: rgb(29, 30, 68);
     display: flex;
     flex-direction: row;
     
     /* transform: translatey(-100px); */
-    animation: homeSkillsBoxOn 0.2s linear forwards;
+    /* animation: homeSkillsBoxOn 0.2s linear forwards; */
     
     
 }
