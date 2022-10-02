@@ -51,7 +51,7 @@ const Projects = (projects) => {
 
     return(
     <div className="main">
-        <b className="heading">Projects</b>
+        <b className="heading1">Projects</b>
         <div className="main-slider-container">
             {scrollPosition != 0?<AiFillLeftCircle className="leftArrow" onClick={slideLeft}/>: <></>}
             
@@ -109,7 +109,6 @@ export function Card(project){
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }

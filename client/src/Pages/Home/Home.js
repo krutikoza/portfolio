@@ -1,4 +1,6 @@
 import React, {useEffect} from 'react'
+import {useNavigate} from "react-router-dom"
+import {useRef} from 'react';
 
 
 import * as THREE from "three"
@@ -26,7 +28,7 @@ import { SchemaTypes } from 'mongoose'
 import Projects from "../Projects/Projects"
 
 import videobg from "../../Images/HomepageBackground.mp4"
-
+import { Button } from '@mui/material';
 
 const Home = (timelines, skills) => {
 
@@ -221,9 +223,17 @@ const Home = (timelines, skills) => {
 
 
 
+  const navigate = useNavigate();
 
   const {user} = useSelector((state) => state.user)
-  console.log(user)
+  
+    const ref = useRef(null);
+
+
+
+    const handleClick = () => {
+      ref.current?.scrollIntoView({behavior: 'smooth'});
+    };
 
   return (
     <div className="home">
@@ -231,40 +241,45 @@ const Home = (timelines, skills) => {
       {/* <video src={videobg} autoplay loop muted /> */}
 
 
-
-        <video autoPlay loop muted>
-          <source src={videobg} type="video/mp4"></source>
-        </video>
-
-
-      {/* <canvas className="homeCanvas"></canvas> */}
-      <div className="homeCanvasContainer">
+      <div className= "first">
+          <video autoPlay loop muted>
+            <source src={videobg} type="video/mp4"></source>
+          </video>
         
-        <Typography variant="h1">
-          <p>K</p>
-          <p>R</p>
-          <p>U</p>
-          <p>T</p>
-          <p>I</p>
-          <p>K</p>
-        </Typography>
 
-        <div className="homeCanvasBox">
-          <h1 className="display-1 "><strong>Full Stack Developer</strong></h1>
-          <h1 className="display-1 "><strong>Create</strong></h1>
-          <h1 className="display-1 "><strong>Create</strong></h1>
-          <h1 className="display-1 "><strong>Create</strong></h1>
+        {/* <canvas className="homeCanvas"></canvas> */}
+        <div className="homeCanvasContainer">
+          
+          <Typography variant="h1">
+            <p>K</p>
+            <p>R</p>
+            <p>U</p>
+            <p>T</p>
+            <p>I</p>
+            <p>K</p>
+          </Typography>
+
+          <div className="homeCanvasBox">
+            <b className="display-1"><strong>Full Stack Developer</strong></b>
+            <b className="display-1"><strong>Create</strong></b>
+            <b className="display-1"><strong>Create</strong></b>
+            <b className="display-1"><strong>Create</strong></b>
+          </div>
+          <div className="homeScroll">
+          {/* <BsFillMouse2Fill onClick={() => window.scrollBy(0, window.innerHeight-window.pageYOffset)}/> */}
+
+          <BsFillMouse2Fill onClick={handleClick}/>
+
+          
+          </div>
         </div>
-        <div className="homeScroll">
-        <BsFillMouse2Fill onClick={() => window.scrollBy(0, window.innerHeight-window.pageYOffset)}/>
-        </div>
-      </div>
       
+      
+      </div>
 
-      <div className="homeContainer">
-        
-        <b className="timelineTitle"> TIMELINE</b>
-        
+
+
+      <div className="homeContainer" ref={ref}>
 
         <TimeLine timelines = {user.timeline} />
         
@@ -289,8 +304,6 @@ const Home = (timelines, skills) => {
       </div>
 
 
-      <div className = "skillList">
-
       <div className="homeSkillsBox">
           <SiReact />
           <SiMongodb />
@@ -301,11 +314,10 @@ const Home = (timelines, skills) => {
           <SiPython />
           <SiNumpy />
         </div>
-      
-      </div>
 
-
-
+    <div className="aboutButton">
+      <Button className="aboutButtonin" sx={{ color: 'white',  borderColor: 'green', marginLeft:"30px" }} size="large" onClick={()=>{navigate("/about")}}><b>About Page</b></Button>
+    </div>
     </div>
   )
 }

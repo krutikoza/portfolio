@@ -38,6 +38,7 @@ const TimeLine = ({timelines}) => {
 
   return (
     <div ref={ref} className="timeline">
+      <b className="timelineTitle"> TIMELINE</b>
       <motion.div animate={animation} className="inTimeline" initial={{x:"-150px"}}>
       <Timeline position="alternate">
     {

@@ -25,7 +25,7 @@ const About = () => {
     return (
         <div className="about">
 
-        <video autoPlay loop muted>
+        <video id="bg" autoPlay loop muted>
           <source src={aboutb} type="video/mp4"></source>
         </video>
             <div className="canvas">
@@ -35,8 +35,10 @@ const About = () => {
             <div className= "dataContainer">
                 
                 <div className="aboutContainer1">
-                    <Typography variant ="h4">{user.name}</Typography>
-                    <Typography>{user.about.description}</Typography>
+                    {/* <Typography variant ="h2">{user.name}</Typography> */}
+                    {/* <Typography>{user.about.description}</Typography> */}
+                    <div className="heading">About Me</div>
+                    <div className="discription">This is some discription about me and what i do all day which is nothing and i dont even know why I am writing this as no one is going to read it but still i have to do something because doing nothing means I am dead and writing this is still better than dead</div>
                     
                 </div>
                 {/* <div className="aboutContainer2">

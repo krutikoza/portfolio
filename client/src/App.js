@@ -31,7 +31,7 @@ function App() {
   },[dispatch]);
 
   return (
-    <div>
+    <div >
 
     {/* Routing */}
       <Router>
@@ -55,7 +55,7 @@ function App() {
         </Routes>
         </>)}
 
-        <Footer />
+        {/* <Footer /> */}
       </Router>
   
     
