@@ -14,15 +14,14 @@
 }
 
 .main{
-    max-width: 100vw; 
-    
+    max-width: 100vw;
+    background: #2D112B;
     /* max-height: 100vh; */
     /* background-image: linear-gradient(to bottom, rgb(156, 155, 226), rgb(202, 157, 207)); */
     transform: translateZ(0px);
-    background-image: url("./project.jpg");
+    /* background-image: url("./project.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-
+    background-size: 100% 100%; */
 }
 
 
@@ -32,9 +31,9 @@
         min-height: 100vh;
         /* background-image: linear-gradient(to bottom, rgb(156, 155, 226), rgb(202, 157, 207)); */
         transform: translateZ(0px);
-        background-image: url("./project.jpg");
+        /* background-image: url("./project.jpg");
         background-repeat: no-repeat;
-        background-size: auto;
+        background-size: auto; */
     
     }
 }
@@ -82,7 +81,7 @@
 } */
 
 .heading1{
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     position: absolute;
     width: 100%;
     font-size: 4vmax;

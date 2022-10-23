@@ -31,13 +31,15 @@ const TimeLine = ({timelines}) => {
         x: 0,
         opacity:1,
       });
+      
     }
+    console.log(inView)
 
 
   },[inView]);
 
   return (
-    <div ref={ref} className="timeline">
+    <div className="timeline">
       <b className="timelineTitle"> TIMELINE</b>
       <motion.div animate={animation} className="inTimeline" initial={{x:"-150px"}}>
       <Timeline position="alternate">
@@ -45,7 +47,7 @@ const TimeLine = ({timelines}) => {
           timelines.map((item,index) => (
             
               <TimelineItem key={index}>
-                <TimelineOppositeContent sx={{m:"auto 0"}} align="right" variant="body2" color="text.primary">{item.date}</TimelineOppositeContent>
+                <TimelineOppositeContent  sx={{m:"auto 0", color: "white"}} align="right" variant="body2" color="text.primary">{item.date}</TimelineOppositeContent>
                 
                 <TimelineSeparator>
                     <TimelineConnector />
@@ -55,8 +57,8 @@ const TimeLine = ({timelines}) => {
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
-                  <div className="discription">
-                    <typography className="itemTitle" underline="hover" variant="h6" color = "Black" >{item.title}</typography>
+                  <div ref={ref}>
+                    <div className="itemTitle"  >{item.title}</div>
                     <typography className="itemDiscription"> {item.description}</typography>
                   </div>
                 </TimelineContent>

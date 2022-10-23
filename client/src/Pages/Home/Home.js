@@ -27,8 +27,14 @@ import { SchemaTypes } from 'mongoose'
 
 import Projects from "../Projects/Projects"
 
+
+
 import videobg from "../../Images/HomepageBackground.mp4"
 import { Button } from '@mui/material';
+import { Parallax } from 'react-scroll-parallax';
+import { useParallax } from 'react-scroll-parallax';
+
+
 
 const Home = (timelines, skills) => {
 
@@ -237,20 +243,66 @@ const Home = (timelines, skills) => {
 
   return (
     <div className="home">
+    <div className="welcomeText">
+        <div className="welcome">KRUTIK OZA</div>
+    </div>
 
-      {/* <video src={videobg} autoplay loop muted /> */}
+<div class="parallax">
+  
+    
+
+    <div class="parallax__layer parallax__layer__0">
+        <img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_0.png?raw=true" />
+    </div>
+    <div class="parallax__layer parallax__layer__1">
+        <img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_1.png?raw=true" />
+    </div>
+    <div class="parallax__layer parallax__layer__2">
+      
+        <img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_2.png?raw=true" />
+    </div>
+    <div class="parallax__layer parallax__layer__3">
+        <img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_3.png?raw=true" />
+    </div>
+    <div class="parallax__layer parallax__layer__4">
+        <img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_4.png?raw=true" />
+    </div>
+    <div class="parallax__layer parallax__layer__5">
+        <img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_5.png?raw=true" />
+    </div>
+    
+    <div class="parallax__layer parallax__layer__6">
+        <img src="https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_6.png?raw=true" />
+    </div>
+    
+    <div class="parallax__cover">
+
+      <div className="homeContainer">
+        <TimeLine timelines = {user.timeline} />
+      </div>
+
+      <div>
+        <Projects projects = {user.projects}/>
+      </div>
+
+    </div>
+</div>
 
 
-      <div className= "first">
-          <video autoPlay loop muted>
+
+ {/* <video src={videobg} autoplay loop muted /> */}
+
+
+      <div >
+          {/* <video autoPlay loop muted>
             <source src={videobg} type="video/mp4"></source>
           </video>
-        
+         */}
 
         {/* <canvas className="homeCanvas"></canvas> */}
-        <div className="homeCanvasContainer">
+        <div>
           
-          <Typography variant="h1">
+          {/* <Typography variant="h1">
             <p>K</p>
             <p>R</p>
             <p>U</p>
@@ -261,31 +313,30 @@ const Home = (timelines, skills) => {
 
           <div className="homeCanvasBox">
             <b className="display-1"><strong>Full Stack Developer</strong></b>
-            <b className="display-1"><strong>Create</strong></b>
-            <b className="display-1"><strong>Create</strong></b>
-            <b className="display-1"><strong>Create</strong></b>
+            <b className="display-1"><strong>Programmer</strong></b>
+            <b className="display-1"><strong>Educator</strong></b>
+            <b className="display-1"><strong>E</strong></b>
           </div>
-          <div className="homeScroll">
+          <div className="homeScroll"> */}
           {/* <BsFillMouse2Fill onClick={() => window.scrollBy(0, window.innerHeight-window.pageYOffset)}/> */}
 
-          <BsFillMouse2Fill onClick={handleClick}/>
+          {/* <BsFillMouse2Fill onClick={handleClick}/> */}
 
           
-          </div>
+          {/* </div> */}
         </div>
       
       
       </div>
 
 
-
-      <div className="homeContainer" ref={ref}>
-
-        <TimeLine timelines = {user.timeline} />
-        
-      </div>
-
       
+        {/* <div className="homeContainer" ref={ref}> */}
+        {/* <div>
+           <TimeLine timelines = {user.timeline} />
+        </div> */}
+
+  
 
       {/* <div className = "homeSkills"> */}
         {/* <Typography variant="h3">SKILLS</Typography> */}
@@ -299,12 +350,13 @@ const Home = (timelines, skills) => {
 
       {/* </div>  */}
       
-      <div className="Projects">
+      {/* <div className="Projects"> */}
+      {/* <div>
         <Projects projects = {user.projects}/>
-      </div>
+      </div> */}
 
 
-      <div className="homeSkillsBox">
+      {/* <div className="homeSkillsBox">
           <SiReact />
           <SiMongodb />
           <SiNodedotjs />
@@ -313,11 +365,12 @@ const Home = (timelines, skills) => {
           <SiExpress />
           <SiPython />
           <SiNumpy />
-        </div>
+        </div> */}
 
-    <div className="aboutButton">
+    {/* <div className="aboutButton">
       <Button className="aboutButtonin" sx={{ color: 'white',  borderColor: 'green', marginLeft:"30px" }} size="large" onClick={()=>{navigate("/about")}}><b>About Page</b></Button>
-    </div>
+    </div> */}
+     
     </div>
   )
 }

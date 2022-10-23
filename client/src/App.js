@@ -20,6 +20,8 @@ import {getUser, loadUser} from "./actions/user"
 import AdminPanel from "./Pages/Admin/AdminPanel"
 import Project from "./Pages/Admin/Project"
 
+
+
 function App() {
   const { isAuthenticated } = useSelector((state) => state.login);
   const { loading, user } = useSelector((state) => state.user);
@@ -34,8 +36,9 @@ function App() {
     <div >
 
     {/* Routing */}
+    
       <Router>
-
+      
         {loading?<div>Loading...</div>:(
           <>
         {/* {<Header />} */}
@@ -54,11 +57,11 @@ function App() {
           <Route path="/admin/project" element={isAuthenticated?<Project/>:<Login/>}/>
         </Routes>
         </>)}
-
+        
         {/* <Footer /> */}
       </Router>
   
-    
+      
 
     </div>
 

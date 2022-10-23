@@ -1,25 +1,26 @@
 .timeline{
-    max-width: 100%;
+    
     min-height: 100vh;
+    max-height: 100vh;
     /* margin-top:40%; */
     /* transform: translateZ(1px); */
     /* background-image: linear-gradient(to bottom, rgb(180, 117, 216),rgb(255, 255, 255)); */
     text-align: center;
     padding: 3vmax;
-    /* max-height: 100vh; */
+    
     min-width: 100vw;
     
-    background-image: url("./timeline.jpg");
+    /* background-image: url("./timeline.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% 100%; */
 }
 
 
 @media (max-width: 1000px){
     .timeline{
         max-width: 100%;
-        min-height: 70vh;
-        margin-top:40px;
+        max-height: 100vh;
+        /* margin-top:40px; */
         transform: translateZ(1px);
         
         text-align: center;
@@ -27,31 +28,34 @@
         min-height: 100vh;
         min-width: 100vw;
     
-        background-image: url("./timeline.jpg");
+        /* background-image: url("./timeline.jpg");
         background-repeat: no-repeat;
-        background-size:auto;
+        background-size:auto; */
     }
 }
 
 
 .itemDiscription{
-    
-    font-size: 20px;
+    color: white;
+    font-size: 15px;
 }
 
 .itemTitle{
+    color: white;
+    margin-top:30px;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .discription{
+   
     display: flex;
     flex-direction: column;
 }
 
 .timelineTitle{
-    color:black;
-    font-size: 4vmax;
+    color:rgb(255, 255, 255);
+    font-size: 3vmax;
 }
 
 .inTimeline{
@@ -59,27 +63,27 @@
     opacity: 0;
 }
 
-@media (max-width: 600px){
+@media (max-width: 680px){
     .timelineTitle{
         color:rgb(255, 255, 255);
         font-size: 4vmax;
     }
     .itemDiscription{
         
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .itemTitle{
         font-weight: bold;
-        font-size: 15px;
+        font-size: 12px;
     }
 }
 
 
-@media (max-width: 370px){
+@media (max-width: 400px){
     .itemDiscription{
         
-        font-size: 9px;
+        font-size: 7px;
     }
 
     .itemTitle{

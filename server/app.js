@@ -1,6 +1,6 @@
 import express from "express";
 import cookieParser from "cookie-parser"
-
+import path from "path";
 
 export const app = express();
 
@@ -14,3 +14,9 @@ import {userRouter} from "./routes/User.js";
 
 app.use("/api/v1", userRouter);
 
+
+app.use(express.static(path.resolve("./client/build")));
+
+app.get("*",(req, res) => {
+    res.sendFile(path.resolve("./client/build/index.html"))
+})
